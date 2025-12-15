@@ -12,13 +12,7 @@ import './global.css'
 
 import siteDef from '../site-def'
 
-type Props = {
-  params: { slug: string }
-  searchParams?: { [key: string]: string | string[] | undefined }
-}
-
-
-const UniversalPage = ({ params, searchParams }: Props) => (<>
+const UniversalPage = () => (<>
   <Main className='text-center mx-auto px-2'>
     <TopButtons />
     <Image src="/assets/lux-site-icons/logo.jpeg" height={100} width={100} alt="logo"/>
