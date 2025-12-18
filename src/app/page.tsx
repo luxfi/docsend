@@ -1,36 +1,16 @@
-import React  from 'react'
-import Image from 'next/image'
+import React from 'react'
 
-import { ApplyTypography } from '@hanzo/ui/primitives'
-import { Footer, Main } from "@luxfi/ui";
-
-import Links from "@/components/links";
-import Socials from "@/components/socials";
-import TopButtons from "@/components/top-buttons";
-
-import './global.css'
-
-import siteDef from '../site-def'
-
-type Props = {
-  params: { slug: string }
-  searchParams?: { [key: string]: string | string[] | undefined }
+export default function Page() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen p-8">
+      <h1 className="text-4xl font-bold mb-4">LUX link</h1>
+      <p className="text-lg text-gray-400 mb-8">Coming soon</p>
+      <a 
+        href="https://lux.network" 
+        className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+      >
+        Learn More
+      </a>
+    </div>
+  )
 }
-
-
-const UniversalPage = ({ params, searchParams }: Props) => (<>
-  <Main className='text-center mx-auto px-2'>
-    <TopButtons />
-    <Image src="/assets/lux-site-icons/logo.jpeg" height={100} width={100} alt="logo"/>
-    <Image src="/assets/lux-site-icons/android-chrome-192x192.png" height={30} width={30} alt="logo"/>
-    <ApplyTypography className='py-3 opacity-60'>
-      <p>Network of blockchains designed for privacy and quantum security.</p>
-    </ApplyTypography>
-    <Links />
-    <Socials />
-  </Main>
-  <Footer siteDef={siteDef} className='w-full pt-16 lg:mx-auto ' />
-
-</>)
-
-export default UniversalPage
