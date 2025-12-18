@@ -1,11 +1,14 @@
 'use client'
 
 import React, {useState} from 'react'
-import saveToWaitlist from '@luxfi/ui/server-actions'
 import ShareDialog from "@/components/share-dialog";
 import {ContactDialog} from "@luxfi/ui";
 
-
+// Static stub - no server action in static export
+const saveToWaitlistStub = async () => {
+  console.log('Waitlist signup - static mode')
+  return { success: true }
+}
 
 const TopButtons = () => {
   const [open, setOpen] = useState(false)
@@ -21,7 +24,7 @@ const TopButtons = () => {
           title="Subscribe for updates"
           buttonText="Subscribe"
           byline="Stay up to date with everything important."
-          action={saveToWaitlist}
+          action={saveToWaitlistStub}
           buttonProps={{className: 'bg-primary !text-black rounded-lg'}}
           actionEnclosure={{
             dbId: 'lux-waitlist',
