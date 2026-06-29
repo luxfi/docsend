@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="docsend" width="880"></p>
+
 # link
 Entrypoint to Lux Ecosystem and social sharing app.
 
