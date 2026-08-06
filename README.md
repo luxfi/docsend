@@ -24,7 +24,6 @@ Since "pnpm" is a finger twister, many people alias it to "pn". For example, wit
 - Dark mode with `next-themes`
 - Tailwind CSS class sorting, merging and linting.
 
-## Based on @hanzo/ui
 
 - A React using Next 14.1, Tailwind and Radix
 - Pulls content from static json (in `/src/content`)
