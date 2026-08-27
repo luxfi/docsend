@@ -1,5 +1,6 @@
 'use client'
 
+import { Box } from '@hanzo/ui'
 import React, {useState} from 'react'
 import ShareDialog from "@/components/share-dialog";
 import {ContactDialog} from "@luxfi/ui";
@@ -13,7 +14,7 @@ const saveToWaitlistStub = async () => {
 const TopButtons = () => {
   const [open, setOpen] = useState(false)
   return (
-    <div className='flex justify-between w-full max-w-[680px]'>
+    <Box className='grid grid-flow-col auto-cols-auto justify-between w-full max-w-[680px]'>
       <div>
         <ShareDialog link={{name: "LUX", url: "", icon: ""}} showButton={true} />
       </div>
@@ -33,7 +34,7 @@ const TopButtons = () => {
           }}
         />
       </div>
-    </div>
+    </Box>
   )
 }
 

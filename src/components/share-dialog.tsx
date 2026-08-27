@@ -1,5 +1,6 @@
 'use client'
 
+import { Box } from '@hanzo/ui'
 import React from 'react'
 import { type ILink } from "@/links";
 import * as Icons from 'lucide-react'
@@ -12,6 +13,7 @@ import {
   Input,
   Button
 } from '@hanzo/ui/primitives'
+import { sx } from '@hanzo/ui'
 import ShareItem from "@/components/share-item";
 import SVG_SHARE_EMAIL from "../../public/assets/social/shareEmail.svg";
 import SVG_SHARE_MESSANGER from "../../public/assets/social/shareMessenger.svg";
@@ -39,18 +41,18 @@ const ShareDialog: React.FC<{
     <Dialog>
       <DialogTrigger asChild>
         {showButton ? (
-          <Button className='bg-primary rounded-full h-[49px] w-[49px] items-center'>
+          <Button {...sx('bg-primary rounded-full h-[49px] w-[49px] items-center')}>
             <Icons.Share2 className='text-black'/>
           </Button>
         ) : (
           <Icons.Share2 className='text-white hover:bg-secondary-0 p-1 rounded'/>
         )}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] p-0 gap-0 bg-background border">
-        <DialogHeader className='py-6 text-foreground'>
-          <DialogTitle className='text-xl text-center text-inherit'>Share this link</DialogTitle>
+      <DialogContent {...sx('sm:max-w-[500px] p-0 gap-0 bg-background border')}>
+        <DialogHeader {...sx('py-6 text-foreground')}>
+          <DialogTitle {...sx('text-xl text-center text-inherit')}>Share this link</DialogTitle>
         </DialogHeader>
-        <div className='px-8 pb-8 rounded-e-lg flex flex-col justify-start items-center gap-4'>
+        <Box className='px-8 pb-8 rounded-e-lg grid grid-cols-1 justify-start items-center gap-4'>
           <ShareItem
             link={`snapchat://creativeKitWeb/camera/1?attachmentUrl=${url()}`}
             title="Share on Snapchat"
@@ -87,7 +89,7 @@ const ShareDialog: React.FC<{
             icon={<SVG_SHARE_EMAIL height={30}/>}
           />
 
-          <div className='flex gap-4 w-full mt-2'>
+          <Box className='grid grid-cols-[1fr_auto] gap-4 w-full mt-2'>
             <Input
               id="link"
               defaultValue={url()}
@@ -96,9 +98,9 @@ const ShareDialog: React.FC<{
             <Button onClick={() => {navigator.clipboard.writeText(url())}}>
               <Icons.Copy className='text-black'/>
             </Button>
-          </div>
+          </Box>
 
-        </div>
+        </Box>
       </DialogContent>
     </Dialog>
   )

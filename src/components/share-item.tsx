@@ -1,5 +1,6 @@
 'use client'
 
+import { Box } from '@hanzo/ui'
 import React from 'react'
 import * as Icons from 'lucide-react'
 import Link from "next/link";
@@ -17,20 +18,20 @@ const ShareItem: React.FC<{
 }) => {
   return (
     <>
-      <div
+      <Box
         className='w-full rounded-sm hover:bg-[#F0F0F0]/10 cursor-pointer py-2'
         style={{transition: 'transform 0.25s cubic-bezier(0, 0.2, 0.5, 3) 0s'}}
       >
         <Link href={link}>
-          <div className='flex justify-between px-2'>
-            <div className='flex gap-4 items-center'>
+          <Box className='grid grid-flow-col auto-cols-auto justify-between px-2'>
+            <Box className='grid grid-flow-col auto-cols-auto gap-4 items-center'>
               {icon}
-              <p className='text-white'>{title}</p>
-            </div>
+              <Box tag="p" className='text-white'>{title}</Box>
+            </Box>
             <Icons.ArrowRight className='my-auto'/>
-          </div>
+          </Box>
         </Link>
-      </div>
+      </Box>
     </>
   )
 }
